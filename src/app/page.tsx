@@ -8,6 +8,7 @@ import OurMission from "./public/Ourmission.jpg";
 import OurVision from "./public/OurVision.jpg";
 import Link from 'next/link';
 
+
 export default function Home() {
   const [showPopup, setShowPopup] = useState(false);
 
@@ -50,9 +51,19 @@ export default function Home() {
             Empowered Collaboration
 
           </p>
-          <Link href={"/services"} className="mt-8 w-[200px] bg-yellow-500  text-white px-6 py-2 rounded-full font-semibold shadow-lg hover:bg-gray-100 hover:text-black transition">
-            Get conenct us
-          </Link>
+          <div className="mt-10  flex items-center justify-start gap-x-6">
+          <Link href={"/services"}
+              
+                className="rounded-md cursor-pointer  bg-yellow-400  px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              >
+                Get started
+              </Link>
+              <Link href={"/about"} className="text-sm hover:p-3 cursor-pointer translate-x-4 hover:bg-yellow-300 rounded-lg border-y-cyan-800 dark:text-white font-semibold transition leading-6 text-gray-900">
+                Learn more <span aria-hidden="true">→</span>
+              </Link>
+            </div>
+    
+
         </div>
 
       </div>

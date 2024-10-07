@@ -9,7 +9,7 @@ interface Props {
 
 const Hero = ({ htag, ptag, btName  }: Props) => {
   return (
-    <section className="relative  h-[90vh] bg-blue-600 dark:bg-gray-900 text-white py-20">
+    <section className="relative  h-[80vh] bg-blue-600 dark:bg-gray-900 text-white py-20">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mt-[30%]">
           <h1 className="text-4xl font-extrabold leading-tight sm:text-5xl lg:text-6xl">
