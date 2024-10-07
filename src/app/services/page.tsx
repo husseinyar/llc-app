@@ -115,7 +115,7 @@ export default function Services() {
       <div className="mt-12 max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-md">
         <h2 className="text-2xl font-bold mb-4 text-blue-900">Let’s Connect!</h2>
         <p className="text-lg mb-4 text-gray-700">
-          Make an appointment with us right away if you're prepared to discuss how we might improve your academic path. Considering your child's needs, we can design a helpful road map.
+          Make an appointment with us right away if you´re prepared to discuss how we might improve your academic path. Considering your child´s needs, we can design a helpful road map.
         </p>
         <form className="space-y-4">
           <input

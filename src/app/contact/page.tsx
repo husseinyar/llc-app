@@ -36,7 +36,7 @@ export default function Contact() {
       </Head>
 
       <header className="bg-blue-400 text-white text-center py-20">
-        <h1 className="text-4xl font-bold">Let's Connect!</h1>
+        <h1 className="text-4xl font-bold">Let´s Connect!</h1>
         <p className="mt-4">We’d love to hear from you!</p>
       </header>
 

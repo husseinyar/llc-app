@@ -23,7 +23,7 @@ export default function About() {
 
         <h3 className="md:text-3xl font-bold text-black underline mb-4">Our Philosophy</h3>
         <p className="text-black text-justify mb-8">
-          Every student should have a distinctive and enriching educational experience. We believe in personalized, student-centered approaches that cater to each child's unique needs, ensuring that every student reaches their full potential.
+          Every student should have a distinctive and enriching educational experience. We believe in personalized, student-centered approaches that cater to each child´s unique needs, ensuring that every student reaches their full potential.
         </p>
 
         <h3 className="md:text-3xl font-bold text-black underline mb-4">What We Do at Empowerful LLC</h3>

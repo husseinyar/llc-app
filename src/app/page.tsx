@@ -62,7 +62,7 @@ export default function Home() {
         <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 z-50">
           <div className="bg-white text-black p-6 rounded-lg shadow-lg transform transition duration-500 scale-105">
             <h2 className="text-2xl font-bold mb-4">Welcome to Empowerful LLC!</h2>
-            <p className="mb-4"> We're here to empower your family and school with personalized solutions.</p>
+            <p className="mb-4"> We´re here to empower your family and school with personalized solutions.</p>
             <button
               className="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition"
               onClick={() => setShowPopup(false)}
@@ -144,7 +144,7 @@ export default function Home() {
           </blockquote>
           <blockquote className="bg-gray-100 p-6 shadow-lg rounded-lg">
             <p className="text-gray-700">
-              “Thanks to Empowerful, we have a better understanding of our child's learning needs and how to support them.”
+              “Thanks to Empowerful, we have a better understanding of our child´s learning needs and how to support them.”
             </p>
             <footer className="mt-4 text-gray-500">- Parent, Willow Creek High School</footer>
           </blockquote>

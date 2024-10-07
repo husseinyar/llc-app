@@ -1,14 +1,13 @@
 import React from 'react';
-import Image from 'next/image';
 interface Props {
   htag: string;
   ptag: string;
   btName: string;
-  imgeTAg: string;
+
 }
 
 
-const Hero = ({ htag, ptag, btName , imgeTAg }: Props) => {
+const Hero = ({ htag, ptag, btName  }: Props) => {
   return (
     <section className="relative  h-[90vh] bg-blue-600 dark:bg-gray-900 text-white py-20">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
