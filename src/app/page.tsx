@@ -153,9 +153,8 @@ export default function Home() {
 
       <section className="py-16   text-center px-4 bg-slate-500 text-white">
         <div className='py-4 w-[80%] m-auto  items-center text-center'>
-          <h1 className='mb-7 text-3xl font-bold'>Collaborative Impact</h1>
-          <div className='w-[50%] m-auto text-center'>
-            Start Collaborating
+          <h1 className='mb-7 md:text-3xl text-xl font-bold'>Collaborative Impact</h1>
+          <div className='w-[100%] m-auto text-start'>
             By fostering strong family-school partnerships, Empowerful
             is transforming the educational landscape. Our programs and
             resources empower
