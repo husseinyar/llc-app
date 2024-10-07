@@ -1,101 +1,176 @@
-import Image from "next/image";
+"use client"
+import { useState, useEffect } from 'react';
+import Layout from './components/Layout';
+import Head from 'next/head';
+import Image from 'next/image';
+import heroImage from './public/heroImge.jpg'; // Ensure the path is correct
+import OurMission from "./public/Ourmission.jpg";
+import OurVision from "./public/OurVision.jpg";
+import Link from 'next/link';
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const [showPopup, setShowPopup] = useState(false);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  useEffect(() => {
+    let scrollPosition = 0;
+
+    const handleScroll = () => {
+      if (window.scrollY < scrollPosition) {
+        setShowPopup(true);
+        window.removeEventListener('scroll', handleScroll);
+      }
+      scrollPosition = window.scrollY;
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  return (
+    <Layout>
+      <Head>
+        <title>Empowerful LLC - Home</title>
+        <meta name="description" content="Empowering Families & Schools for Lifelong Learning" />
+      </Head>
+
+      {/* Hero Section */}
+      <div className="relative h-[100vh] bg-blue-600 text-white flex items-center">
+        <div className="absolute inset-0 opacity-40">
+          <Image src={heroImage} alt="Hero Image" layout="fill" objectFit="cover" />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        <div className="relative flex flex-col items-cente  w-[80%] justify-center m-auto  px-4">
+          <h1 className="text-3xl md:text-5xl font-bold leading-tight max-w-3xl">
+            Empowering Families & Schools for Lifelong Learning
+          </h1>
+          <p className="text-lg mt-4 max-w-xl">
+            At Empowerful, we believe that when families and schools work together, students thrive. Our programs are designed to foster strong partnerships and equip both families and educators with the
+            Empowered Collaboration
+
+          </p>
+          <Link href={"/services"} className="mt-8 w-[200px] bg-yellow-500  text-white px-6 py-2 rounded-full font-semibold shadow-lg hover:bg-gray-100 hover:text-black transition">
+            Get conenct us
+          </Link>
+        </div>
+
+      </div>
+
+      {/* Popup Section */}
+      {showPopup && (
+        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 z-50">
+          <div className="bg-white text-black p-6 rounded-lg shadow-lg transform transition duration-500 scale-105">
+            <h2 className="text-2xl font-bold mb-4">Welcome to Empowerful LLC!</h2>
+            <p className="mb-4"> We're here to empower your family and school with personalized solutions.</p>
+            <button
+              className="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition"
+              onClick={() => setShowPopup(false)}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Vision & Mission Section */}
+      <section className="py-16 text-center bg-white text-black px-4">
+        <div className='md:flex md:w-full mt-10 justify-evenly'>
+          <div className='md:w-1/2 m-auto'>
+            <h2 className="text-3xl md:text-4xl font-bold">Our Vision</h2>
+            <p className="mt-4 max-w-3xl mx-auto text-start ">
+              A world where schools and families work hand-in-hand to create inclusive, supportive learning environments that empower every child.
+              We believe that collaboration between educators and families is key to fostering a culture of belonging,
+              where diversity is celebrated and all students are encouraged to thrive.
+
+            </p>
+          </div>
+          <div className='md:w-1/2'>
+            <Image style={{ width: "100%", height: "auto" }} src={OurVision} alt='Our Mission' />
+          </div>
+        </div>
+
+        {/* Mission Section */}
+        <div className='md:flex mt-10 justify-evenly'>
+          <div className='md:w-1/2'>
+            <Image style={{ width: "100%", height: "auto" }} src={OurMission} alt='Our Vision' />
+          </div>
+          <div className='md:w-1/2'>
+            <h2 className="text-3xl md:text-4xl font-bold mt-16">Our Mission</h2>
+            <p className="mt-4 max-w-3xl mx-auto">
+              Empowerful LLC works with families and schools to provide individualized consulting services that enhance learning environments, promote inclusivity, and foster strong family-school collaboration.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="bg-white text-black py-16 px-4">
+        <div className="text-center">
+          <h2 className="text-3xl md:text-4xl font-bold">How We Support You</h2>
+          <p className="mt-4">Our consulting services are designed to meet your unique needs.</p>
+        </div>
+        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {/* Service cards */}
+          <div className="bg-gray-100 text-black p-6 shadow-lg rounded-lg text-center transition transform hover:scale-105">
+            <h3 className="text-xl font-bold">IEP Support</h3>
+            <p className="mt-2">Guiding families through the IEP process for individualized student plans.</p>
+          </div>
+          <div className="bg-gray-100 text-black p-6 shadow-lg rounded-lg text-center transition transform hover:scale-105">
+            <h3 className="text-xl font-bold">Academic Coaching</h3>
+            <p className="mt-2">One-on-one tutoring sessions to help students achieve academic success.</p>
+          </div>
+          <div className="bg-gray-100 text-black p-6 shadow-lg rounded-lg text-center transition transform hover:scale-105">
+            <h3 className="text-xl font-bold">SEL Support</h3>
+            <p className="mt-2">Promoting emotional intelligence and resilience for a well-rounded education.</p>
+          </div>
+        </div>
+        <div className="text-center mt-8">
+          <Link href={"./services"} className="bg-blue-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-blue-700 transition">
+            Explore Our Services
+          </Link>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-16 text-center px-4 bg-white text-black">
+        <h2 className="text-3xl md:text-4xl font-bold">What Our Partners Say</h2>
+        <div className="mt-8 max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+          <blockquote className="bg-gray-100 p-6 shadow-lg rounded-lg">
+            <p className="text-gray-700">
+              “Empowerful helped our school implement better teaching strategies, and now our students are more engaged than ever!”
+            </p>
+            <footer className="mt-4 text-gray-500">- Principal, Riverbend Elementary</footer>
+          </blockquote>
+          <blockquote className="bg-gray-100 p-6 shadow-lg rounded-lg">
+            <p className="text-gray-700">
+              “Thanks to Empowerful, we have a better understanding of our child's learning needs and how to support them.”
+            </p>
+            <footer className="mt-4 text-gray-500">- Parent, Willow Creek High School</footer>
+          </blockquote>
+        </div>
+      </section>
+
+      <section className="py-16   text-center px-4 bg-slate-500 text-white">
+        <div className='py-4 w-[80%] m-auto  items-center text-center'>
+          <h1 className='mb-7 text-3xl font-bold'>Collaborative Impact</h1>
+          <div className='w-[50%] m-auto text-center'>
+            Start Collaborating
+            By fostering strong family-school partnerships, Empowerful
+            is transforming the educational landscape. Our programs and
+            resources empower
+            families and educators to work together to create vibrant
+          </div>
+
+        </div>
+
+        <Link href={"/services"} className=" m-10 w-[200px] bg-red-300  text-white px-6 py-2 rounded-full font-semibold shadow-lg hover:bg-gray-100 hover:text-black transition">
+
+          Start Collaborating
+        </Link>
+      </section>
+
+
+    </Layout>
   );
 }

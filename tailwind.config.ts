@@ -13,6 +13,7 @@ const config: Config = {
         foreground: "var(--foreground)",
       },
     },
+    darkMode: ['selector', '[data-mode="dark"]'],
   },
   plugins: [],
 };
